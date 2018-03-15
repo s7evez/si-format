@@ -4,7 +4,7 @@
 var expect = require('chai').expect;
 var siFormat = require('../lib/si-format.js');
 
-describe('', function () {
+describe('[siFormat]', function () {
   var dv = 0.0000000001;
 
   var testData = [
@@ -562,35 +562,55 @@ describe('', function () {
     },
   ];
 
-  testData.forEach(function (test) {
-    var result;
+  describe('detailed', function () {
+    testData.forEach(function (test) {
+      var result;
 
-    before(function () {
-      result = siFormat(test.v);
-    });
-
-    describe('Test ' + test.v + ' should equal ' + test.formatted, function () {
-
-      it('should have the correct normalized mantissa: ' + test.m, function () {
-        expect(result.mantissa).to.be.within(test.m - dv, test.m + dv);
+      before(function () {
+        result = siFormat(test.v, { detailed: true });
       });
 
-      it('should have the correct normalized exponent: ' + test.e, function () {
-        expect(result.exponent).to.be.eql(test.e);
-      });
+      describe('Test ' + test.v + ' should equal ' + test.formatted, function () {
 
-      it('should have the correct SI symbol:' + test.si, function () {
-        expect(result.symbol).to.be.eql(test.symbol);
-      });
+        it('should have the correct normalized mantissa: ' + test.m, function () {
+          expect(result.mantissa).to.be.within(test.m - dv, test.m + dv);
+        });
 
-      it('should have the correct SI prefix:' + test.si, function () {
-        expect(result.prefix).to.be.eql(test.prefix);
-      });
+        it('should have the correct normalized exponent: ' + test.e, function () {
+          expect(result.exponent).to.be.eql(test.e);
+        });
 
-      it('should have the correct expected formatted value: ' + test.formatted, function () {
-        expect(result.formatted).to.be.eql(test.formatted);
+        it('should have the correct SI symbol:' + test.si, function () {
+          expect(result.symbol).to.be.eql(test.symbol);
+        });
+
+        it('should have the correct SI prefix:' + test.si, function () {
+          expect(result.prefix).to.be.eql(test.prefix);
+        });
+
+        it('should have the correct expected formatted value: ' + test.formatted, function () {
+          expect(result.formatted).to.be.eql(test.formatted);
+        });
       });
     });
   });
+
+  describe('format only', function () {
+    testData.forEach(function (test) {
+      var result;
+
+      before(function () {
+        result = siFormat(test.v);
+      });
+
+      describe('Test ' + test.v + ' should equal ' + test.formatted, function () {
+
+        it('should have the correct expected formatted value: ' + test.formatted, function () {
+          expect(result).to.be.eql(test.formatted);
+        });
+      });
+    });
+  });
+
 });
 
