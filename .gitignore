@@ -1,0 +1,67 @@
+#User-specific WebStorm files that should be ignored (cf. #https://intellij-support.jetbrains.com/hc/en-us/articles/206544839)
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+/.vscode/
+
+coverage
+coverage-data
+reports/
+node_modules
+test_artifacts
+test/mocha.opts
+spike.js
+dist/
+packages/
+.gem/
+*.log
+mongo.log.*
+msi/bin/
+msi/obj/
+msi/Dynamic/
+help/html/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# User settings files
+.brackets.json

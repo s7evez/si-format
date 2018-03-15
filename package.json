@@ -1,0 +1,34 @@
+{
+  "name": "si-format",
+  "version": "0.1.0",
+  "description": "Format numbers with SI suffixes",
+  "main": "index.js",
+  "keywords": [
+    "International System of Units"
+  ],
+  "author": "s7evez",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:s7evez/si-format.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9.4"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-if": "^2.0.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "dependencies": {}
+}
